@@ -5,8 +5,8 @@
 
 > 'npm install' both in backend and the Frontend folders 
 
-'npx react-native run android' in the Frontend folder
+> 'npx react-native run android' in the Frontend folder
 
-'npm start' in the backend folder
+> 'npm start' in the backend folder
 
 
