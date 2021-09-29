@@ -156,7 +156,7 @@ export default function LoginScreen({ route, navigation }) {
           </AppForm>
         {/* </Screen> */}
       </View>
-      <View>
+      <View >
         <TouchableOpacity
           onPress={() => sendCred()}
         >
@@ -164,8 +164,8 @@ export default function LoginScreen({ route, navigation }) {
             <Text style={styles.buttonText}>login</Text>
           </View>
         </TouchableOpacity>
-      </View>
-      {userType == "Admin"? null : <View>
+      
+      {userType == "Admin"? null : <View >
         <TouchableOpacity
           onPress={() => {
             //console.log("login->register with opacity");
@@ -178,6 +178,8 @@ export default function LoginScreen({ route, navigation }) {
           </View>
         </TouchableOpacity>
       </View>}
+      </View>
+     
     </View>
   );
 }

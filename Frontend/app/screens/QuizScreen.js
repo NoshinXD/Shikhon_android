@@ -131,7 +131,7 @@ export default function QuizScreen({ route, navigation }) {
       <View style={styles.content}>
         <View>
           <View>
-            <Text style = {styles.headerText}> MCQ Test</Text>
+            <Text style = {styles.headerText}> বহুনির্বাচনি অভীক্ষা </Text>
             <FlatList
               data={quizes}
               renderItem={({ item }) => (
