@@ -170,9 +170,9 @@ export default function NoteScreen({ route, navigation }) {
             {showSubmit === 0 ? (
               <View>
                 <TouchableOpacity onPress={() => sendCred()} style={styles.addButton}>
-                  <View style={styles.addViewButton}>
+                  {/* <View style={styles.addViewButton}> */}
                     <Text style={styles.addButtonText}>Add Note</Text>
-                  </View>
+                  {/* </View> */}
                 </TouchableOpacity>
               </View>
             ) : (
@@ -260,7 +260,7 @@ const styles = StyleSheet.create({
     color: "#0000A0",
   },
   addFrom: {
-    backgroundColor: "#E0FFFF",
+    backgroundColor: "#D2ECFA",
   },
   addButton: {
     // flex: 1,
@@ -268,10 +268,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#add8e6",
     borderRadius: 20,
-    marginRight: 110,
-    marginLeft: 110,
-    marginBottom: 20,
+    marginRight: 135,
+    marginLeft: 135,
+    marginBottom: 10,
     marginTop: 20,
+    shadowColor: "#001",
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 0.58,
+    shadowRadius: 16.00,
+    elevation: 20,
   },
   addViewButton: {
     flex: 1,
@@ -288,7 +296,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "center",
     fontWeight: "bold",
-    margin: 10,
+    margin: 3,
     padding: 10,
   },
   input: {
@@ -311,7 +319,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
     justifyContent: "center",
-    marginTop: 5,
+    marginTop: 20,
     //marginBottom: 20,
     paddingLeft: 10,
     paddingRight: 10,
@@ -323,7 +331,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#add8e6",
     borderRadius: 8,
     padding: 20,
-    margin: 2,
+    margin:2,
+    marginLeft: 5,
+    marginRight:10,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,

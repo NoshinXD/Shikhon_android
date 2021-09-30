@@ -112,9 +112,9 @@ export default function CourseDetailScreen({ route, navigation }) {
             />
             <View>
               <TouchableOpacity onPress={() => sendCred()} style={styles.addButton}>
-                <View style={styles.addViewButton}>
+                {/* <View style={styles.addViewButton}> */}
                   <Text style={styles.addButtonText}>Add Chapter</Text>
-                </View>
+                {/* </View> */}
               </TouchableOpacity>
             </View>
           </View>
@@ -184,9 +184,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#add8e6",
     borderRadius: 20,
-    marginRight: 110,
-    marginLeft: 110,
-    marginBottom: 20,
+    marginRight: 130,
+    marginLeft: 130,
+    marginBottom: 40,
     marginTop: 20,
   },
   addViewButton: {
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "center",
     fontWeight: "bold",
-    margin: 10,
+    margin: 5,
     padding: 10,
   },
   input: {

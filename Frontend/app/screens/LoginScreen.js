@@ -156,26 +156,26 @@ export default function LoginScreen({ route, navigation }) {
           </AppForm>
         {/* </Screen> */}
       </View>
-      <View >
-        <TouchableOpacity
+      <View>
+        <TouchableOpacity style = {styles.opacityButton}
           onPress={() => sendCred()}
         >
-          <View style={styles.viewButton}>
-            <Text style={styles.buttonText}>login</Text>
-          </View>
+          {/* <View style={styles.viewButton}> */}
+            <Text style={styles.buttonText}>Login</Text>
+          {/* </View> */}
         </TouchableOpacity>
       
       {userType == "Admin"? null : <View >
-        <TouchableOpacity
+        <TouchableOpacity style = {styles.opacityButton}
           onPress={() => {
             //console.log("login->register with opacity");
             
             navigation.navigate("Register", { userID: userID, userType: userType });
           }}
         >
-          <View style={styles.viewButton}>
+          {/* <View style={styles.viewButton}> */}
             <Text style={styles.buttonText}>Not registered? Register here</Text>
-          </View>
+          {/* </View> */}
         </TouchableOpacity>
       </View>}
       </View>
@@ -203,6 +203,15 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 20,
   },
+  viewButton2: {
+    flex: 1,
+    backgroundColor: "white",
+    justifyContent: "center",
+    marginTop: 15,
+    marginBottom: 15,
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
   headerText: {
     fontSize: 25,
     textAlign: "center",
@@ -214,5 +223,19 @@ const styles = StyleSheet.create({
     color: "#0000A0",
     textAlign: "center",
     fontWeight: "bold",
+  },
+  opacityButton: {
+    // flex: 1,
+    // alignItems: "flex-start",
+    // justifyContent: "center",
+    backgroundColor: "#add8e6",
+    // borderRadius: 20,
+    padding: 10,
+    // paddingLeft: 10,
+    // paddingRight: 40,
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 20,
+    borderRadius: 20,
   },
 });

@@ -71,10 +71,10 @@ export default function CoursesScreen({ route, navigation }) {
               value={courseName}
             />
             <View>
-              <TouchableOpacity onPress={() => sendCred()} style={styles.addButton}>
-                <View style={styles.addViewButton}>
+              <TouchableOpacity  onPress={() => sendCred()} style={styles.addButton}>
+                {/* <View style={styles.addViewButton}> */}
                   <Text style={styles.addButtonText}>Add Course</Text>
-                </View>
+                {/* </View> */}
               </TouchableOpacity>
             </View>
           </View>
@@ -139,11 +139,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#add8e6",
+    paddingBottom: -5,
+    paddingTop:-5,
     borderRadius: 20,
-    marginRight: 110,
-    marginLeft: 110,
-    marginBottom: 20,
-    marginTop: 20,
+    marginRight: 135,
+    marginLeft: 135,
+    marginBottom: 50,
+    marginTop: 10,
   },
   addViewButton: {
     flex: 1,
@@ -160,7 +162,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "center",
     fontWeight: "bold",
-    margin: 10,
+    margin: 5,
     padding: 10,
   },
   input: {
@@ -225,4 +227,18 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     paddingLeft: 10,
   },
+  addcourseButton: {
+    // flex: 1,
+    // alignItems: "flex-start",
+    // justifyContent: "center",
+    // backgroundColor: "#add8e6",
+    // borderRadius: 20,
+    // padding: 10,
+    // paddingLeft: 10,
+    // paddingRight: 40,
+    // marginLeft: 10,
+    // marginRight: 20,
+    // marginBottom: 10,
+    // borderRadius: 20,
+  }, 
 });

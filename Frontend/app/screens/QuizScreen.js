@@ -119,9 +119,9 @@ export default function QuizScreen({ route, navigation }) {
                 }}
                 style={styles.addButton}
               >
-                <View style={styles.addViewButton}>
+                {/* <View style={styles.addViewButton}> */}
                   <Text style={styles.addButtonText}>Add Quiz</Text>
-                </View>
+                {/* </View> */}
               </TouchableOpacity>
             </View>
           </View>
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
     color: "#0000A0",
   },
   addFrom: {
-    backgroundColor: "#E0FFFF",
+    backgroundColor: "#D2ECFA",
   },
   addButton: {
     // flex: 1,
@@ -202,10 +202,19 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#add8e6",
     borderRadius: 20,
-    marginRight: 110,
-    marginLeft: 110,
-    marginBottom: 20,
+    marginRight: 140,
+    marginLeft: 140,
+    marginBottom: 10,
     marginTop: 20,
+
+    shadowColor: "#001",
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 0.58,
+    shadowRadius: 16.00,
+    elevation: 20,
   },
   addViewButton: {
     flex: 1,
@@ -222,7 +231,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "center",
     fontWeight: "bold",
-    margin: 10,
+    margin: 3,
     padding: 10,
   },
   input: {
@@ -241,17 +250,17 @@ const styles = StyleSheet.create({
     //justifyContent: "center",
     //margin: 15,
   },
-  addButton: {
-    // flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#add8e6",
-    borderRadius: 20,
-    marginRight: 110,
-    marginLeft: 110,
-    marginBottom: 20,
-    marginTop: 20,
-  },
+  // addButton: {
+  //   // flex: 1,
+  //   alignItems: "center",
+  //   justifyContent: "center",
+  //   backgroundColor: "#add8e6",
+  //   borderRadius: 20,
+  //   marginRight: 110,
+  //   marginLeft: 110,
+  //   marginBottom: 20,
+  //   marginTop: 20,
+  // },
   addViewButton: {
     flex: 1,
     backgroundColor: "white",
@@ -261,15 +270,15 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
   },
-  addButtonText: {
-    fontSize: 18,
-    color: "#0000A0",
-    textAlign: "center",
-    justifyContent: "center",
-    fontWeight: "bold",
-    margin: 10,
-    padding: 10,
-  },
+  // addButtonText: {
+  //   fontSize: 18,
+  //   color: "#0000A0",
+  //   textAlign: "center",
+  //   justifyContent: "center",
+  //   fontWeight: "bold",
+  //   margin: 10,
+  //   padding: 10,
+  // },
   viewButton: {
     flex: 1,
     backgroundColor: "white",
@@ -284,7 +293,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "center",
     backgroundColor: "#add8e6",
-    borderRadius: 20,
+    borderRadius: 8,
     padding: 10,
     paddingLeft: 10,
     paddingRight: 40,

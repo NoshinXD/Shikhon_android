@@ -122,9 +122,9 @@ export default function ExerciseScreen({ route, navigation }) {
                 }}
                 style={styles.addButton}
               >
-                <View style={styles.addViewButton}>
+                {/* <View style={styles.addViewButton}> */}
                   <Text style={styles.addButtonText}>Add Exercise</Text>
-                </View>
+                {/* </View> */}
               </TouchableOpacity>
             </View>
           </View>
@@ -364,7 +364,7 @@ const styles = StyleSheet.create({
     color: "#000000",
   },
   addFrom: {
-    backgroundColor: "#E0FFFF",
+    backgroundColor: "#D2ECFA",
   },
   seeAnswerButton: {
     flex: 1,
@@ -398,10 +398,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#add8e6",
     borderRadius: 20,
-    marginRight: 80,
-    marginLeft: 80,
+    marginRight: 120,
+    marginLeft: 120,
     marginBottom: 5,
     marginTop: 5,
+    shadowColor: "#001",
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 0.58,
+    shadowRadius: 16.00,
+    elevation: 20,
   },
   addViewButton: {
     flex: 1,

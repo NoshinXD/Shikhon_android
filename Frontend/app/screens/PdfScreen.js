@@ -265,9 +265,9 @@ const checkTopicInput = async () => {
           {showSubmit === 0 ? (
             <View>
               <TouchableOpacity onPress={() => sendPdf()} style={styles.addButton}>
-                <View style={styles.addViewButton}>
+                {/* <View style={styles.addViewButton}> */}
                   <Text style={styles.addButtonText}>Add Pdf</Text>
-                </View>
+                {/* </View> */}
               </TouchableOpacity>
             </View>
           ) : (
@@ -346,7 +346,7 @@ const styles = StyleSheet.create({
     //justifyContent: 'center',
   },
   addFrom: {
-    backgroundColor: "#E0FFFF",
+    backgroundColor: "#D2ECFA",
   },
   addButton: {
     // flex: 1,
@@ -354,10 +354,19 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#add8e6",
     borderRadius: 20,
-    marginRight: 110,
-    marginLeft: 110,
-    marginBottom: 20,
+    marginRight: 138,
+    marginLeft: 138,
+    marginBottom: 10,
     marginTop: 20,
+
+    shadowColor: "#001",
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 0.58,
+    shadowRadius: 16.00,
+    elevation: 20,
   },
   addViewButton: {
     flex: 1,
@@ -374,7 +383,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "center",
     fontWeight: "bold",
-    margin: 10,
+    margin: 3,
     padding: 10,
   },
   input: {
@@ -397,34 +406,34 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
     justifyContent: "center",
-    marginTop: 35,
-    marginBottom: 20,
+    marginTop: 30,
+    marginBottom: 2,
     paddingLeft: 10,
     paddingRight: 20,
   },
-  opacityButton: {
-    flex: 1,
-    alignItems: "flex-start",
-    justifyContent: "center",
-    backgroundColor: "#add8e6",
-    borderRadius: 20,
-    // padding: 10,
-  },
-  viewButton: {
-    flex: 1,
-    backgroundColor: "white",
-    justifyContent: "center",
+  // opacityButton: {
+  //   flex: 1,
+  //   alignItems: "flex-start",
+  //   justifyContent: "center",
+  //   backgroundColor: "#add8e6",
+  //   borderRadius: 8,
+  //   // padding: 10,
+  // },
+  // viewButton: {
+  //   flex: 1,
+  //   backgroundColor: "white",
+  //   justifyContent: "center",
    
-    marginBottom: 10,
-    paddingLeft: 2,
-    paddingRight: 10,
-  },
+  //   marginBottom: 10,
+  //   paddingLeft: 2,
+  //   paddingRight: 10,
+  // },
   opacityButton: {
     flex: 1,
     alignItems: "flex-start",
     justifyContent: "center",
     backgroundColor: "#add8e6",
-    borderRadius: 20,
+    borderRadius: 8,
     padding: 8,
     margin: 2,
     shadowColor: "#000",
