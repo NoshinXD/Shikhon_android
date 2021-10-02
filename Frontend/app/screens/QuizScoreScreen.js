@@ -29,7 +29,7 @@ export default function QuizScoreScreen({ route, navigation }) {
     <View style={styles.fullhomescreen}>
       {/* header */}
       <View style={styles.header}>
-        <Text style={styles.headerText}>User ID: {userID}</Text>
+        {/* <Text style={styles.headerText}>User ID: {userID}</Text> */}
         {/* <Text style={styles.headerText}>
           You scored {score} out of {questions.length}
         </Text> */}

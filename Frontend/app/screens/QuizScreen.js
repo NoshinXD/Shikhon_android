@@ -7,7 +7,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 export default function QuizScreen({ route, navigation }) {
   const { userID, userType, _id, chapterNo, trackID, trackName } = route.params;
   // console.log("in screen1"+trackName);
-  //   console.log(userType);
+  console.log(userType);
 
   const [topicName, setTopicName] = useState("");
   const [quizName, setQuizName] = useState("");
@@ -147,6 +147,7 @@ export default function QuizScreen({ route, navigation }) {
                           topicName: item.topicName,
                           trackID: trackID,
                           trackName: trackName,
+                          quizName: item.quizName
                         });
                       }}
                     >
@@ -168,7 +169,7 @@ export default function QuizScreen({ route, navigation }) {
               )}
               keyExtractor={(item, index) => index.toString()}
             />
-            <Text style = {styles.headerText}>Written Exam</Text>
+            {/* <Text style = {styles.headerText}>Written Exam</Text> */}
           </View>
         </View>
       </View>

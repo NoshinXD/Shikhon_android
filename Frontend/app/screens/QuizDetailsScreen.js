@@ -4,13 +4,14 @@ import { ScrollView, View, Text, TextInput, Button, StyleSheet, TouchableOpacity
 import fetchAddress from "../IP_File";
 
 export default function QuizDetailsScreen({ route, navigation }) {
-  const { userID, userType, _id, chapterNo, trackID, trackName, quizName, courseName} = route.params;
+  const { userID, userType, _id, chapterNo, trackID, trackName, quizName} = route.params;
+  console.log("now printing" + _id);
  
   // console.log("in screen2" + trackName);
 
   const [questions, setQuestions] = useState("");
 
-  const [currentQuestion, setCurrentQuestion] = useState(-1);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [showButton, setButton] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -40,7 +41,10 @@ export default function QuizDetailsScreen({ route, navigation }) {
       }
       //   console.log(data.quiz);
       // console.log("here");
+      
       setQuestions(data.quiz.questions);
+      console.log(data.quiz.questions[0]);
+
     });
   // console.log(questions);
   const showQuestions_console = () => {
@@ -250,7 +254,7 @@ export default function QuizDetailsScreen({ route, navigation }) {
     <View style={styles.fullhomescreen}>
       {/* header */}
       <View style={styles.header}>
-        <Text style={styles.headerText}>User ID: {userID}</Text>
+        {/* <Text style={styles.headerText}>User ID: {userID}</Text> */}
         {userType == "Student" && questions.length != 0 ? <Text style={styles.headerText}>{restime}</Text> : null }
         {/* <Text>hello!</Text> */}
       </View>
@@ -376,9 +380,7 @@ export default function QuizDetailsScreen({ route, navigation }) {
               <View>
                 {questions.length === 0 ? null : (
                   <View>
-                    <View
-                    // style={styles.viewButton}
-                    >
+                      {console.log(questions[currentQuestion].description)}
                       <Text style={styles.questionText}>{questions[currentQuestion].description}</Text>
                       <FlatList
                         data={questions[currentQuestion].alternatives}
@@ -398,7 +400,7 @@ export default function QuizDetailsScreen({ route, navigation }) {
                         )}
                         keyExtractor={(item, index) => index.toString()}
                       />
-                    </View>
+                    
                   </View>
                 )}
               </View>
