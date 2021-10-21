@@ -40,8 +40,10 @@ import QuizScreen from "./app/screens/QuizScreen";
 // import QuizScreen from "./app/screens/temp_QuizScreen";
 import QuizDetailsScreen from "./app/screens/QuizDetailsScreen";
 import AddQuizScreen from "./app/screens/AddQuizScreen";
+import SetTimeQuizScreen from "./app/screens/SetQuizTimeScreen";
 import AddQuizDetailsScreen from "./app/screens/AddQuizDetailsScreen";
 import QuizScoreScreen from "./app/screens/QuizScoreScreen";
+import SetQuizTimeScreen from "./app/screens/SetQuizTimeScreen";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -265,6 +267,14 @@ function QuizStackScreen({ route }) {
         name="AddQuiz"
         component={AddQuizScreen}
         options={{ title: "Add Quiz" }}
+        // initialParams={{ userID: 100, userType: "Teacher" }}
+        initialParams={{ userID: userID, userType: userType, _id: _id, chapterNo: chapterNo, trackID: trackID, trackName: trackName, courseName: courseName}}
+      />
+      <QuizStack.Screen
+        options={{ headerShown: false }}
+        name="SetQuizTime"
+        component={SetQuizTimeScreen}
+        options={{ title: "Set Quiz Time" }}
         // initialParams={{ userID: 100, userType: "Teacher" }}
         initialParams={{ userID: userID, userType: userType, _id: _id, chapterNo: chapterNo, trackID: trackID, trackName: trackName, courseName: courseName}}
       />

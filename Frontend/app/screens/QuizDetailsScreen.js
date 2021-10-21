@@ -4,8 +4,11 @@ import { ScrollView, View, Text, TextInput, Button, StyleSheet, TouchableOpacity
 import fetchAddress from "../IP_File";
 
 export default function QuizDetailsScreen({ route, navigation }) {
-  const { userID, userType, _id, chapterNo, trackID, trackName, quizName} = route.params;
+  const { userID, userType, _id, chapterNo, trackID, trackName, quizName, quizTime} = route.params;
   console.log("now printing" + _id);
+  // console.log("quiz time: " + quizTime);
+
+  if(quizTime === 0) quizTime = 10;
  
   // console.log("in screen2" + trackName);
 
@@ -19,7 +22,7 @@ export default function QuizDetailsScreen({ route, navigation }) {
   const [countSeconds, setCountSeconds] = useState(false);
   const [score, setScore] = useState(0);
   const [hscore, setHscore] = useState(0);
-  const [time, setTime] = useState(10);
+  const [time, setTime] = useState(quizTime);
   const [restime, setRestime] = useState(null);
   const [chosenText, setChosenText] = useState([]);
   const [totalMark, setTotalMark] = useState(0);
@@ -42,9 +45,11 @@ export default function QuizDetailsScreen({ route, navigation }) {
       //   console.log(data.quiz);
       // console.log("here");
       
+      // setTime(data.quiz.totalMark);
       setQuestions(data.quiz.questions);
-      console.log(data.quiz.questions[0]);
-
+      // console.log(data.quiz.questions[0]);
+      // console.log("total mark");
+      // console.log(data.quiz.totalMark);
     });
   // console.log(questions);
   const showQuestions_console = () => {
@@ -154,8 +159,6 @@ export default function QuizDetailsScreen({ route, navigation }) {
 
   const showResult = async(isCorrect, mark) => {
     await handleAnswerOptionClick(isCorrect, mark);
-    
-
   }
 
   

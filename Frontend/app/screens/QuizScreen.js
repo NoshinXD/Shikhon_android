@@ -87,7 +87,8 @@ export default function QuizScreen({ route, navigation }) {
         } catch (e) {
           console.log("The error is: ", e);
         }
-        console.log(data);
+        // console.log("in quiz screen");
+        // console.log(data);
       });
   };
 
@@ -140,6 +141,8 @@ export default function QuizScreen({ route, navigation }) {
                     <TouchableOpacity
                       style={styles.opacityButton}
                       onPress={() => {
+                        console.log("in quiz screen");
+                        {console.log(item)}
                         navigation.navigate("QuizDetails", {
                           userID: userID,
                           userType: userType,
@@ -147,7 +150,8 @@ export default function QuizScreen({ route, navigation }) {
                           topicName: item.topicName,
                           trackID: trackID,
                           trackName: trackName,
-                          quizName: item.quizName
+                          quizName: item.quizName,
+                          quizTime: item.totalMark
                         });
                       }}
                     >

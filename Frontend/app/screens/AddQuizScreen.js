@@ -105,7 +105,7 @@ export default function AddQuizScreen({ route, navigation }) {
               // showQuestion();
               // get_totalMark();
               sendCred_quiz();
-              navigation.navigate("AllQuizes", {
+              navigation.navigate("SetQuizTime", {
                 userID: userID,
                 userType: userType,
                 _id: _id,
