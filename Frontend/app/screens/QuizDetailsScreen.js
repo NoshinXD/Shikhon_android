@@ -4,7 +4,7 @@ import { ScrollView, View, Text, TextInput, Button, StyleSheet, TouchableOpacity
 import fetchAddress from "../IP_File";
 
 export default function QuizDetailsScreen({ route, navigation }) {
-  const { userID, userType, _id, chapterNo, trackID, trackName, quizName} = route.params;
+  const { userID, userType, _id, chapterNo, trackID, trackName, quizName, quizTime} = route.params;
   console.log("now printing" + _id);
  
   // console.log("in screen2" + trackName);
@@ -19,7 +19,7 @@ export default function QuizDetailsScreen({ route, navigation }) {
   const [countSeconds, setCountSeconds] = useState(false);
   const [score, setScore] = useState(0);
   const [hscore, setHscore] = useState(0);
-  const [time, setTime] = useState(10);
+  const [time, setTime] = useState(quizTime* 30);
   const [restime, setRestime] = useState(null);
   const [chosenText, setChosenText] = useState([]);
   const [totalMark, setTotalMark] = useState(0);
@@ -226,7 +226,7 @@ export default function QuizDetailsScreen({ route, navigation }) {
   };
 
   const sendCred_quiz_ques_dlt = async (item_id) => {
-    console.log("here in sendCred_note_dlt");
+    //console.log("here in sendCred_note_dlt");
     const tempFetchaddr2 = fetchAddress + "question/";
     const addr2 = `${tempFetchaddr2}?_id=${encodeURIComponent(item_id)}`;
 
@@ -255,7 +255,7 @@ export default function QuizDetailsScreen({ route, navigation }) {
       {/* header */}
       <View style={styles.header}>
         {/* <Text style={styles.headerText}>User ID: {userID}</Text> */}
-        {userType == "Student" && questions.length != 0 ? <Text style={styles.headerText}>{restime}</Text> : null }
+        {userType == "Student" && (currentQuestion != questions.length-1) && questions.length != 0 ? <Text style={styles.headerText}>{restime}</Text> : null }
         {/* <Text>hello!</Text> */}
       </View>
       
@@ -307,7 +307,7 @@ export default function QuizDetailsScreen({ route, navigation }) {
         // working here
         <View style={styles.content}>
           <View>
-            {showScore ? (
+            {(currentQuestion == questions.length-1) || showScore ? (
              <View>
                {!uploadMark? (
                  <View>
@@ -331,7 +331,7 @@ export default function QuizDetailsScreen({ route, navigation }) {
                      <View>
                      <Text style={styles.headerText}>
                          You scored {score} out of {totalMark} {'\n'}
-                         Highscore: {hscore}
+                         Previous High Score: {hscore}
              
                      </Text>
                    </View>

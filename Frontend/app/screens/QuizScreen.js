@@ -147,7 +147,8 @@ export default function QuizScreen({ route, navigation }) {
                           topicName: item.topicName,
                           trackID: trackID,
                           trackName: trackName,
-                          quizName: item.quizName
+                          quizName: item.quizName,
+                          quizTime: item.questions.length
                         });
                       }}
                     >
